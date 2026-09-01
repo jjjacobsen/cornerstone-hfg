@@ -1,8 +1,4 @@
 {
-  "name": "cornerstone-hfg",
-  "version": "0.1.0",
-  "private": true,
-  "packageManager": "npm@11.19.0",
   "dependencies": {
     "@vinext/cloudflare": "latest",
     "react": "latest",
@@ -23,13 +19,17 @@
     "vite": "latest",
     "wrangler": "^4.127.1"
   },
-  "type": "module",
+  "name": "cornerstone-hfg",
+  "packageManager": "npm@11.19.0",
+  "private": true,
   "scripts": {
-    "dev": "vinext dev",
     "build": "vinext build",
-    "start": "wrangler dev --config dist/server/wrangler.json",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv ./worker-configuration.d.ts",
     "deploy": "vinext-cloudflare deploy --config dist/server/wrangler.json",
+    "dev": "vinext dev",
     "preview": "npm run build && npm run start --",
-    "cf-typegen": "wrangler types --env-interface CloudflareEnv ./worker-configuration.d.ts"
-  }
+    "start": "wrangler dev --config dist/server/wrangler.json"
+  },
+  "type": "module",
+  "version": "0.1.0"
 }

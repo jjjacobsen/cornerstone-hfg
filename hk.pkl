@@ -1,0 +1,60 @@
+amends "package://github.com/jdx/hk/releases/download/v1.55.0/hk@1.55.0#/Config.pkl"
+
+import "package://github.com/jdx/hk/releases/download/v1.55.0/hk@1.55.0#/Builtins.pkl"
+
+local linters = new Mapping<String, Step> {
+  ["check-added-large-files"] = (Builtins.check_added_large_files) {
+    exclude = List("worker-configuration.d.ts")
+  }
+  ["check-case-conflict"] = Builtins.check_case_conflict
+  ["check-executables-have-shebangs"] = Builtins.check_executables_have_shebangs
+  ["check-merge-conflict"] = Builtins.check_merge_conflict
+  ["check-symlinks"] = Builtins.check_symlinks
+  ["detect-private-key"] = Builtins.detect_private_key
+  ["byte-order-marker"] = Builtins.byte_order_marker
+  ["mixed-line-ending"] = (Builtins.mixed_line_ending) {
+    exclude = List("worker-configuration.d.ts")
+  }
+  ["newlines"] = (Builtins.newlines) {
+    exclude = List("worker-configuration.d.ts")
+  }
+  ["trailing-whitespace"] = (Builtins.trailing_whitespace) {
+    exclude = List("worker-configuration.d.ts")
+  }
+  ["fix-smart-quotes"] = (Builtins.fix_smart_quotes) {
+    exclude = List("worker-configuration.d.ts")
+  }
+  ["taplo"] = Builtins.taplo
+  ["typos"] = (Builtins.typos) {
+    exclude = List("worker-configuration.d.ts")
+  }
+  ["gitleaks"] = Builtins.gitleaks
+  ["pkl"] = Builtins.pkl
+  ["pkl-format"] = Builtins.pkl_format
+  ["taplo-format"] = Builtins.taplo_format
+  ["jq"] = (Builtins.jq) {
+    exclude = List("package-lock.json")
+  }
+  ["prettier"] = (Builtins.prettier) {
+    glob = List("**/*.md", "**/*.markdown")
+  }
+  ["markdown-lint"] = Builtins.markdown_lint
+  ["tsc"] = (Builtins.tsc) {
+    glob = List("**/*.ts", "**/*.tsx", "tsconfig.json")
+  }
+}
+
+hooks {
+  ["pre-commit"] {
+    fix = true
+    stash = "git"
+    steps = linters
+  }
+  ["check"] {
+    steps = linters
+  }
+  ["fix"] {
+    fix = true
+    steps = linters
+  }
+}

@@ -1,2 +1,14 @@
 [tools]
+gitleaks = "latest"
+hk = "latest"
+jq = "latest"
 node = "24.14.0"
+"npm:markdownlint-cli2" = "latest"
+"npm:typescript" = "7.0.2"
+pkl = "latest"
+prettier = "latest"
+taplo = "latest"
+typos = "latest"
+
+[env]
+HK_MISE = 1

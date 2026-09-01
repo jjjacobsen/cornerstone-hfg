@@ -1,0 +1,8 @@
+title = "cornerstone-hfg gitleaks configuration"
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Ignore generated build output"
+paths = ['''^dist/''']
