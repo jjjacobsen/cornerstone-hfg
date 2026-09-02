@@ -76,14 +76,14 @@ export function MeetingFields({
           </div>
           <div>
             <label className="form-label" htmlFor="end_time">
-              End time{" "}
-              <span className="font-normal text-stone-500">(optional)</span>
+              End time
             </label>
             <input
               className="form-input"
               defaultValue={meeting?.end_time}
               id="end_time"
               name="end_time"
+              required
               type="time"
             />
           </div>

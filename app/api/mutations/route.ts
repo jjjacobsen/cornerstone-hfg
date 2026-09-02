@@ -14,7 +14,6 @@ import {
   parseDate,
   parseOptionalPositiveInteger,
   parseOptionalString,
-  parseOptionalTime,
   parsePositiveInteger,
   parseRequiredString,
   parseStatus,
@@ -36,8 +35,8 @@ function notFound() {
 
 function meetingInput(form: FormData) {
   const startTime = parseTime(form, "start_time");
-  const endTime = parseOptionalTime(form, "end_time");
-  if (endTime && endTime <= startTime) {
+  const endTime = parseTime(form, "end_time");
+  if (endTime <= startTime) {
     throw new Error("end_time must be later than start_time");
   }
 

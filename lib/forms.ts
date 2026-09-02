@@ -117,27 +117,3 @@ export function parseTime(formData: FormData, name: string) {
 
   return value;
 }
-
-export function parseOptionalTime(formData: FormData, name: string) {
-  const entry = formData.get(name);
-
-  if (entry === null || entry === "") {
-    return "";
-  }
-
-  if (typeof entry !== "string") {
-    throw new Error(`${name} must be a string`);
-  }
-
-  const value = entry.trim();
-
-  if (value === "") {
-    return "";
-  }
-
-  if (!/^(?:[01]\d|2[0-3]):[0-5]\d$/.test(value)) {
-    throw new Error(`${name} must use HH:MM format`);
-  }
-
-  return value;
-}
