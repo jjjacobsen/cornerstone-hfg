@@ -111,35 +111,19 @@ export function MeetingFields({
               ))}
             </select>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div>
-              <label className="form-label" htmlFor="location_name">
-                Location name{" "}
-                <span className="font-normal text-stone-500">(optional)</span>
-              </label>
-              <input
-                className="form-input"
-                defaultValue={meeting?.location_name}
-                id="location_name"
-                maxLength={200}
-                name="location_name"
-                placeholder="The Smith home"
-              />
-            </div>
-            <div>
-              <label className="form-label" htmlFor="address">
-                Address{" "}
-                <span className="font-normal text-stone-500">(optional)</span>
-              </label>
-              <input
-                autoComplete="street-address"
-                className="form-input"
-                defaultValue={meeting?.address}
-                id="address"
-                maxLength={500}
-                name="address"
-              />
-            </div>
+          <div>
+            <label className="form-label" htmlFor="address">
+              Address{" "}
+              <span className="font-normal text-stone-500">(optional)</span>
+            </label>
+            <input
+              autoComplete="street-address"
+              className="form-input"
+              defaultValue={meeting?.address}
+              id="address"
+              maxLength={500}
+              name="address"
+            />
           </div>
         </div>
       </fieldset>

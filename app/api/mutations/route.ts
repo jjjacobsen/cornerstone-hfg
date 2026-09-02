@@ -46,7 +46,6 @@ function meetingInput(form: FormData) {
     start_time: startTime,
     end_time: endTime,
     host_household_id: parseOptionalPositiveInteger(form, "host_household_id"),
-    location_name: parseOptionalString(form, "location_name", 200),
     address: parseOptionalString(form, "address", 500),
     main_dish: parseOptionalString(form, "main_dish", 500),
     notes: parseOptionalString(form, "notes", 2000),

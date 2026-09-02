@@ -101,26 +101,19 @@ export function MeetingCard({
           <Detail
             label="Address"
             value={
-              meeting.location_name || meeting.address ? (
+              meeting.address ? (
                 <>
-                  {meeting.location_name && (
-                    <span className="block">{meeting.location_name}</span>
-                  )}
-                  {meeting.address && (
-                    <>
-                      <span className="block whitespace-pre-line">
-                        {meeting.address}
-                      </span>
-                      <a
-                        className="-mx-2 mt-1 inline-flex min-h-11 items-center px-2 font-semibold text-[#982838] underline decoration-[#982838]/30 underline-offset-2 hover:text-[#76202c]"
-                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(meeting.address)}`}
-                        rel="noreferrer"
-                        target="_blank"
-                      >
-                        Open map
-                      </a>
-                    </>
-                  )}
+                  <span className="block whitespace-pre-line">
+                    {meeting.address}
+                  </span>
+                  <a
+                    className="-mx-2 mt-1 inline-flex min-h-11 items-center px-2 font-semibold text-[#982838] underline decoration-[#982838]/30 underline-offset-2 hover:text-[#76202c]"
+                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(meeting.address)}`}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    Open map
+                  </a>
                 </>
               ) : undefined
             }

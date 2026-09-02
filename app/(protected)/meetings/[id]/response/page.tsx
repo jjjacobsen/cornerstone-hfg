@@ -65,10 +65,9 @@ export default async function ResponsePage({
   const hostName = households.find(
     (row) => row.id === meeting.host_household_id,
   )?.name;
-  const hostAndLocation = [
+  const hostAndAddress = [
     hostName && `Hosted by ${hostName}`,
-    (meeting.location_name || meeting.address) &&
-      `at ${meeting.location_name || meeting.address}`,
+    meeting.address && `at ${meeting.address}`,
   ]
     .filter(Boolean)
     .join(" ");
@@ -86,7 +85,7 @@ export default async function ResponsePage({
       <p className="page-description">
         {formatDate(meeting.meeting_date)}, {time}
         <span className="block">
-          {hostAndLocation || "Host and location are not set"}
+          {hostAndAddress || "Host and address are not set"}
         </span>
       </p>
 

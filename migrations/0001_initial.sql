@@ -29,7 +29,6 @@ CREATE TABLE meetings (
   start_time TEXT NOT NULL,
   end_time TEXT NOT NULL,
   host_household_id INTEGER REFERENCES households(id) ON DELETE SET NULL,
-  location_name TEXT NOT NULL DEFAULT '',
   address TEXT NOT NULL DEFAULT '',
   main_dish TEXT NOT NULL DEFAULT '',
   notes TEXT NOT NULL DEFAULT ''

@@ -25,7 +25,6 @@ export interface MeetingRow {
   start_time: string;
   end_time: string;
   host_household_id: number | null;
-  location_name: string;
   address: string;
   main_dish: string;
   notes: string;
@@ -50,7 +49,6 @@ export interface MeetingInput {
   start_time: string;
   end_time: string;
   host_household_id: number | null;
-  location_name: string;
   address: string;
   main_dish: string;
   notes: string;
@@ -161,12 +159,11 @@ export function createMeeting(db: D1Database, groupId: number, input: MeetingInp
          start_time,
          end_time,
          host_household_id,
-         location_name,
          address,
          main_dish,
          notes
        )
-       SELECT ?, ?, ?, ?, host.id, ?, ?, ?, ?
+       SELECT ?, ?, ?, ?, host.id, ?, ?, ?
        FROM (SELECT ? AS id) AS requested_host
        LEFT JOIN households AS host
          ON host.id = requested_host.id AND host.group_id = ?
@@ -178,7 +175,6 @@ export function createMeeting(db: D1Database, groupId: number, input: MeetingInp
       input.meeting_date,
       input.start_time,
       input.end_time,
-      input.location_name,
       input.address,
       input.main_dish,
       input.notes,
@@ -201,7 +197,6 @@ export function updateMeeting(
            start_time = ?,
            end_time = ?,
            host_household_id = ?,
-           location_name = ?,
            address = ?,
            main_dish = ?,
            notes = ?
@@ -219,7 +214,6 @@ export function updateMeeting(
       input.start_time,
       input.end_time,
       input.host_household_id,
-      input.location_name,
       input.address,
       input.main_dish,
       input.notes,
@@ -288,7 +282,6 @@ export async function listMeetingSummaries(
         start_time: row.start_time,
         end_time: row.end_time,
         host_household_id: row.host_household_id,
-        location_name: row.location_name,
         address: row.address,
         main_dish: row.main_dish,
         notes: row.notes,
