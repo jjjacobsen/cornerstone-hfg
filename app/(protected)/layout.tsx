@@ -40,9 +40,6 @@ export default async function ApplicationLayout({
             <a className="nav-link" href="/households">
               Households
             </a>
-            <a className="nav-link" href="/meetings/new">
-              Add meeting
-            </a>
           </nav>
         </div>
       </header>
