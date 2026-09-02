@@ -54,7 +54,6 @@ export function MeetingCard({
   for (const response of meeting.responses) {
     totals[response.status] += 1;
   }
-  const mapQuery = meeting.address || meeting.location_name;
   const meetingHeadingId = `meeting-${meeting.id}-heading`;
   const attendanceHeadingId = `meeting-${meeting.id}-attendance`;
   const formattedDate = formatDate(meeting.meeting_date);
@@ -100,26 +99,28 @@ export function MeetingCard({
         <dl className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <Detail label="Host" value={meeting.host_household_name} />
           <Detail
-            label="Location"
+            label="Address"
             value={
-              mapQuery ? (
+              meeting.location_name || meeting.address ? (
                 <>
                   {meeting.location_name && (
                     <span className="block">{meeting.location_name}</span>
                   )}
                   {meeting.address && (
-                    <span className="block whitespace-pre-line">
-                      {meeting.address}
-                    </span>
+                    <>
+                      <span className="block whitespace-pre-line">
+                        {meeting.address}
+                      </span>
+                      <a
+                        className="-mx-2 mt-1 inline-flex min-h-11 items-center px-2 font-semibold text-[#982838] underline decoration-[#982838]/30 underline-offset-2 hover:text-[#76202c]"
+                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(meeting.address)}`}
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        Open map
+                      </a>
+                    </>
                   )}
-                  <a
-                    className="-mx-2 mt-1 inline-flex min-h-11 items-center px-2 font-semibold text-[#982838] underline decoration-[#982838]/30 underline-offset-2 hover:text-[#76202c]"
-                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery)}`}
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    Open map
-                  </a>
                 </>
               ) : undefined
             }
