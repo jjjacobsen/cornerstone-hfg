@@ -35,9 +35,9 @@ Do not change a migration after another environment applies it. Add a new number
 
 ## Authentication
 
-Each group has one shared password verifier. The password helper uses Node PBKDF2 with SHA-256, a random 16-byte salt, a 32-byte hash, and 310,000 iterations. The database stores all three verifier values. It does not store the password
+Each group has one shared password verifier. The password helper uses Node PBKDF2 with SHA-256, a random 16-byte salt, a 32-byte hash, and 100,000 iterations. This is the maximum iteration count supported by the Cloudflare Workers Web Crypto implementation. The database stores all three verifier values. It does not store the password
 
-A login for an unknown group still performs one 310,000-iteration PBKDF2 derivation against dummy verifier data before it fails. This reduces group discovery through response timing
+A login for an unknown group still performs one 100,000-iteration PBKDF2 derivation against dummy verifier data before it fails. This reduces group discovery through response timing
 
 The login and logout endpoint accepts POST requests only when the `Origin` header matches the request origin. Successful login creates an HTTP-only, same-site session cookie. `SESSION_SECRET` signs the cookie with HMAC-SHA-256 and is required to contain at least 32 UTF-8 bytes before HMAC use
 

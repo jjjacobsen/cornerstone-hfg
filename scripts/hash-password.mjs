@@ -6,7 +6,7 @@ if (!password) {
   throw new Error("Provide the password on standard input");
 }
 
-const iterations = 310_000;
+const iterations = 100_000;
 const salt = randomBytes(16);
 const hash = pbkdf2Sync(password, salt, iterations, 32, "sha256");
 
