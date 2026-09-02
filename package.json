@@ -23,12 +23,16 @@
   "packageManager": "npm@11.19.0",
   "private": true,
   "scripts": {
-    "build": "vinext build",
+    "build": "vinext build && rm -f dist/server/.dev.vars",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv ./worker-configuration.d.ts",
     "deploy": "vinext-cloudflare deploy --config dist/server/wrangler.json",
     "dev": "vinext dev",
     "preview": "npm run build && npm run start --",
-    "start": "wrangler dev --config dist/server/wrangler.json"
+    "start": "wrangler dev --config dist/server/wrangler.json --env-file \"$INIT_CWD/.dev.vars\" --persist-to \"$INIT_CWD/.wrangler/state\"",
+    "db:migrate:local": "wrangler d1 migrations apply DB --local --persist-to \"$INIT_CWD/.wrangler/state\"",
+    "db:migrate:remote": "wrangler d1 migrations apply DB --remote",
+    "db:seed:local": "wrangler d1 execute DB --local --persist-to \"$INIT_CWD/.wrangler/state\" --file .private/seed.sql",
+    "password:hash": "node scripts/hash-password.mjs"
   },
   "type": "module",
   "version": "0.1.0"

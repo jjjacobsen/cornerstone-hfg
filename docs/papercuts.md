@@ -13,3 +13,11 @@ unblocked the secret scan
 
 Prettier joins Markdown paragraph lines beyond markdownlint's default 80-character
 limit. Disabling MD013 prevents the two required Markdown steps from conflicting
+
+## 2026-09-02: Built Worker used a different local D1 state
+
+Wrangler resolved local persistence relative to the generated `dist/server/wrangler.json` file. The development server had seeded data, but the built Worker failed with `no such table: groups`. Passing the same absolute project-root `--persist-to` path to migration, seed, and built Worker scripts unblocked preview validation
+
+## 2026-09-02: Focused browser snapshots temporarily hid an existing ref
+
+A Playwright ref from a full snapshot was unavailable immediately after a focused subtree snapshot even though the page did not change. Running `find` for the control refreshed the ref and unblocked the response update smoke test

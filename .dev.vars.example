@@ -1,0 +1,4 @@
+# SESSION_SECRET is required and must be at least 32 UTF-8 bytes
+# Generate a strong local value with the command in README.md
+# Do not add personal data or production secrets to this example
+SESSION_SECRET=

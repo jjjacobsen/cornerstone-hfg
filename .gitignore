@@ -4,6 +4,7 @@ node_modules
 next-env.d.ts
 tsconfig.tsbuildinfo
 /dist/
+.private/
 .vinext/
 .wrangler/
 
