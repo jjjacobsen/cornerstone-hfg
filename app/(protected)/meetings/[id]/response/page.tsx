@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { HouseholdSelect } from "@/app/components/household-select";
 import { positiveId, requireGroupContext } from "@/app/components/session";
 import { getMeeting, getResponse, listHouseholds } from "@/lib/db";
 
@@ -114,26 +115,12 @@ export default async function ResponsePage({
             <p className="mt-1 text-sm text-stone-600">
               Choose a household to add or edit its response
             </p>
-            <div className="mt-3 flex flex-col gap-3 sm:flex-row">
-              <select
-                className="form-input mt-0 flex-1"
-                defaultValue={household?.id ?? ""}
-                id="household"
-                name="household"
-                required
-              >
-                <option disabled value="">
-                  Select a household
-                </option>
-                {households.map((row) => (
-                  <option key={row.id} value={row.id}>
-                    {row.name}
-                  </option>
-                ))}
-              </select>
-              <button className="button-secondary" type="submit">
-                Load response
-              </button>
+            <div className="mt-3">
+              <HouseholdSelect
+                households={households}
+                key={household?.id ?? "unselected"}
+                selectedHouseholdId={household?.id ?? null}
+              />
             </div>
           </form>
 
