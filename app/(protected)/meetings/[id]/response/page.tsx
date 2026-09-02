@@ -109,7 +109,11 @@ export default async function ResponsePage({
             className="rounded-2xl border border-[#531821]/10 bg-[#f6f1e8] p-5"
             method="get"
           >
-            <label className="form-label" htmlFor="household">
+            <label
+              className="form-label"
+              htmlFor="household"
+              id="household-label"
+            >
               Household
             </label>
             <p className="mt-1 text-sm text-stone-600">
@@ -120,6 +124,7 @@ export default async function ResponsePage({
                 households={households}
                 key={household?.id ?? "unselected"}
                 selectedHouseholdId={household?.id ?? null}
+                submitOnChange
               />
             </div>
           </form>

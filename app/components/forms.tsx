@@ -1,3 +1,4 @@
+import { HouseholdSelect } from "@/app/components/household-select";
 import type { HouseholdRow, MeetingRow } from "@/lib/db";
 
 export function HouseholdFields({ household }: { household?: HouseholdRow }) {
@@ -93,23 +94,21 @@ export function MeetingFields({
         <legend className="form-section-title">Hosting</legend>
         <div className="mt-4 space-y-4">
           <div>
-            <label className="form-label" htmlFor="host_household_id">
+            <label
+              className="form-label"
+              htmlFor="host_household_id"
+              id="host_household_id-label"
+            >
               Host household{" "}
               <span className="font-normal text-stone-500">(optional)</span>
             </label>
-            <select
-              className="form-input"
-              defaultValue={meeting?.host_household_id ?? ""}
+            <HouseholdSelect
+              clearLabel="No host selected"
+              households={households}
               id="host_household_id"
               name="host_household_id"
-            >
-              <option value="">No host selected</option>
-              {households.map((household) => (
-                <option key={household.id} value={household.id}>
-                  {household.name}
-                </option>
-              ))}
-            </select>
+              selectedHouseholdId={meeting?.host_household_id ?? null}
+            />
           </div>
           <div>
             <label className="form-label" htmlFor="address">
