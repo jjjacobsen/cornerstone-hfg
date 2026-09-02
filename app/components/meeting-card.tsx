@@ -63,9 +63,9 @@ export function MeetingCard({
   return (
     <article
       aria-labelledby={meetingHeadingId}
-      className="overflow-hidden rounded-2xl border border-orange-950/10 bg-white shadow-sm"
+      className="overflow-hidden rounded-2xl border border-[#531821]/10 bg-white shadow-sm shadow-[#531821]/5"
     >
-      <div className="border-b border-orange-950/10 bg-[#fffaf1] px-5 py-4 sm:px-6">
+      <div className="border-b border-[#531821]/10 bg-[#f6f1e8] px-5 py-4 sm:px-6">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div>
             <MeetingHeading
@@ -74,7 +74,7 @@ export function MeetingCard({
             >
               {formattedDate}
             </MeetingHeading>
-            <p className="mt-1 text-sm font-semibold text-amber-700">
+            <p className="mt-1 text-sm font-semibold text-[#982838]">
               {formattedStartTime}
               {meeting.end_time && ` to ${formatTime(meeting.end_time)}`}
             </p>
@@ -113,7 +113,7 @@ export function MeetingCard({
                     </span>
                   )}
                   <a
-                    className="-mx-2 mt-1 inline-flex min-h-11 items-center px-2 font-semibold text-amber-700 underline decoration-amber-700/30 underline-offset-2 hover:text-amber-900"
+                    className="-mx-2 mt-1 inline-flex min-h-11 items-center px-2 font-semibold text-[#982838] underline decoration-[#982838]/30 underline-offset-2 hover:text-[#76202c]"
                     href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery)}`}
                     rel="noreferrer"
                     target="_blank"
@@ -156,7 +156,7 @@ export function MeetingCard({
               <span className="rounded-full bg-stone-200 px-3 py-1.5 text-stone-700">
                 No {totals.no}
               </span>
-              <span className="rounded-full bg-orange-50 px-3 py-1.5 text-stone-600">
+              <span className="rounded-full bg-stone-100 px-3 py-1.5 text-stone-600">
                 Awaiting{" "}
                 {Math.max(0, householdCount - meeting.responses.length)}
               </span>
@@ -164,7 +164,7 @@ export function MeetingCard({
           </div>
 
           <details className="group/roster mt-3 rounded-xl border border-stone-200 bg-stone-50">
-            <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 rounded-xl px-4 py-2 text-sm font-bold text-amber-800 marker:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-700 focus-visible:ring-offset-2">
+            <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-3 rounded-xl px-4 py-2 text-sm font-bold text-[#982838] marker:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#982838] focus-visible:ring-offset-2">
               <span>Household responses ({meeting.responses.length})</span>
               <span className="group-open/roster:hidden" aria-hidden="true">
                 Show
@@ -198,7 +198,7 @@ export function MeetingCard({
                           </span>
                         </div>
                         <a
-                          className="-mx-2 inline-flex min-h-11 items-center px-2 text-sm font-semibold text-amber-700 underline decoration-amber-700/30 underline-offset-2 hover:text-amber-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-700 focus-visible:ring-offset-2"
+                          className="-mx-2 inline-flex min-h-11 items-center px-2 text-sm font-semibold text-[#982838] underline decoration-[#982838]/30 underline-offset-2 hover:text-[#76202c] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#982838] focus-visible:ring-offset-2"
                           href={`/meetings/${meeting.id}/response?household=${response.household_id}`}
                         >
                           Edit response

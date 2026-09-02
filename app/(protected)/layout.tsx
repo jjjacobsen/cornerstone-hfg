@@ -8,12 +8,12 @@ export default async function ApplicationLayout({
   const { group } = await requireGroupContext();
 
   return (
-    <div className="min-h-screen bg-stone-50 text-stone-900">
-      <header className="border-b border-orange-950/10 bg-[#fffaf1]">
+    <div className="min-h-screen bg-[#f8f6f1] text-stone-900">
+      <header className="border-b border-[#531821]/10 bg-[#f6f1e8]">
         <div className="mx-auto max-w-6xl px-4 py-5 sm:px-6 lg:px-8">
           <div className="flex items-start justify-between gap-4">
             <a className="min-w-0 no-underline" href="/">
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-amber-700">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#982838]">
                 Cornerstone HFG
               </p>
               <p className="mt-1 text-xl font-bold tracking-tight text-stone-950 sm:text-2xl">

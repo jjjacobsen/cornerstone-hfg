@@ -35,7 +35,7 @@ export default async function HouseholdsPage() {
         <ul className="mt-6 grid gap-4 sm:grid-cols-2">
           {households.map((household) => (
             <li
-              className="flex items-start justify-between gap-4 rounded-2xl border border-orange-950/10 bg-white p-5 shadow-sm"
+              className="flex items-start justify-between gap-4 rounded-2xl border border-[#531821]/10 bg-white p-5 shadow-sm shadow-[#531821]/5"
               key={household.id}
             >
               <div className="min-w-0">

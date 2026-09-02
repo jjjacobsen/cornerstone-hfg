@@ -6,14 +6,14 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
   const { error } = await searchParams;
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-slate-950 px-4 py-12 sm:px-6">
+    <main className="flex min-h-screen items-center justify-center bg-[#531821] px-4 py-12 sm:px-6">
       <div className="w-full max-w-md">
         <div className="mb-8 text-center text-white">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-amber-400">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#d8c8b8]">
             Cornerstone Presbyterian Church
           </p>
           <h1 className="mt-3 text-3xl font-semibold tracking-tight">Home Fellowship Groups</h1>
-          <p className="mt-3 text-sm leading-6 text-slate-300">
+          <p className="mt-3 text-sm leading-6 text-[#f6f1e8]/70">
             Sign in with your group&apos;s shared credentials
           </p>
         </div>
@@ -46,7 +46,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
                 autoCapitalize="none"
                 autoComplete="username"
                 autoFocus
-                className="mt-2 block w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-slate-950 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-amber-600 focus:ring-2 focus:ring-amber-600/20"
+                className="mt-2 block w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-slate-950 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-[#982838] focus:ring-2 focus:ring-[#982838]/20"
                 id="group"
                 name="group"
                 placeholder="Your group code"
@@ -62,7 +62,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
               </label>
               <input
                 autoComplete="current-password"
-                className="mt-2 block w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-slate-950 shadow-sm outline-none transition focus:border-amber-600 focus:ring-2 focus:ring-amber-600/20"
+                className="mt-2 block w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-slate-950 shadow-sm outline-none transition focus:border-[#982838] focus:ring-2 focus:ring-[#982838]/20"
                 id="password"
                 name="password"
                 required
@@ -71,7 +71,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
             </div>
 
             <button
-              className="flex w-full items-center justify-center rounded-lg bg-amber-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-amber-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-600 focus-visible:ring-offset-2 active:bg-amber-800"
+              className="flex w-full items-center justify-center rounded-lg bg-[#982838] px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#76202c] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#982838] focus-visible:ring-offset-2 active:bg-[#531821]"
               type="submit"
             >
               Sign in

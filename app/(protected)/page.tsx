@@ -75,7 +75,7 @@ export default async function DashboardPage() {
 
       <section aria-labelledby="past-heading">
         <details className="group rounded-2xl border border-stone-200 bg-white shadow-sm">
-          <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 marker:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-700 focus-visible:ring-offset-2 sm:px-6">
+          <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 marker:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#982838] focus-visible:ring-offset-2 sm:px-6">
             <div>
               <p className="eyebrow">Archive</p>
               <h2
@@ -87,13 +87,13 @@ export default async function DashboardPage() {
             </div>
             <span
               aria-hidden="true"
-              className="rounded-full bg-orange-50 px-3 py-1.5 text-sm font-bold text-amber-800 group-open:hidden"
+              className="rounded-full bg-[#f6f1e8] px-3 py-1.5 text-sm font-bold text-[#982838] group-open:hidden"
             >
               Show
             </span>
             <span
               aria-hidden="true"
-              className="hidden rounded-full bg-orange-50 px-3 py-1.5 text-sm font-bold text-amber-800 group-open:inline"
+              className="hidden rounded-full bg-[#f6f1e8] px-3 py-1.5 text-sm font-bold text-[#982838] group-open:inline"
             >
               Hide
             </span>

@@ -106,7 +106,7 @@ export default async function ResponsePage({
         <div className="mt-6 space-y-6">
           <form
             action={`/meetings/${meeting.id}/response`}
-            className="rounded-2xl border border-orange-950/10 bg-[#fffaf1] p-5"
+            className="rounded-2xl border border-[#531821]/10 bg-[#f6f1e8] p-5"
             method="get"
           >
             <label className="form-label" htmlFor="household">
@@ -160,11 +160,11 @@ export default async function ResponsePage({
                       ["no", "No"],
                     ].map(([value, label]) => (
                       <label
-                        className="flex min-h-11 cursor-pointer items-center justify-center rounded-xl border border-stone-300 bg-white p-3 text-center text-sm font-bold text-stone-800 has-checked:border-amber-700 has-checked:bg-amber-50 has-checked:text-amber-900"
+                        className="flex min-h-11 cursor-pointer items-center justify-center rounded-xl border border-stone-300 bg-white p-3 text-center text-sm font-bold text-stone-800 has-checked:border-[#982838] has-checked:bg-[#f6f1e8] has-checked:text-[#76202c]"
                         key={value}
                       >
                         <input
-                          className="mr-2 accent-amber-700"
+                          className="mr-2 accent-[#982838]"
                           defaultChecked={response?.status === value}
                           name="status"
                           required
