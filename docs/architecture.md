@@ -4,9 +4,9 @@
 
 The application runs as a Cloudflare Worker built by Vinext. Wrangler serves the built Worker and deploys it to Cloudflare
 
-The `DB` binding gives Worker code access to Cloudflare D1. `wrangler.jsonc` is the source configuration. Vinext uses it when it creates the deployment configuration
+The `DB` binding gives Worker code access to Cloudflare D1. `wrangler.jsonc` is the source configuration. Vinext uses it when it creates the deployment configuration. The binding uses the Cloudflare-assigned `database_id` in production and a stable all-zero `preview_database_id` in local development
 
-Local migration, seed, and built Worker scripts pass `--persist-to "$INIT_CWD/.wrangler/state"`. This makes each command use the same D1 state in the project root, including commands that use `dist/server/wrangler.json`
+The Vite Cloudflare plugin stores state in `.wrangler/state`. Local migration, seed, and built Worker scripts pass `--persist-to "$INIT_CWD/.wrangler/state"`. This makes the development server and each command use the same D1 state in the project root, including commands that use `dist/server/wrangler.json`
 
 Vinext can copy `.dev.vars` into `dist/server`. The build script removes that copy after a successful build so local secrets do not remain in generated artifacts. The built Worker start script passes the root `.dev.vars` file to Wrangler explicitly
 

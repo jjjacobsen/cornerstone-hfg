@@ -34,9 +34,9 @@ A Cloudflare Worker application for home fellowship group planning
    npm run dev
    ```
 
-The all-zero D1 database ID in `wrangler.jsonc` is a valid local placeholder. Replace it before a production deployment
+The production `database_id` in `wrangler.jsonc` must contain the ID from Cloudflare before deployment. Keep the all-zero `preview_database_id`. It gives local development a stable database identity that does not change when the production ID changes
 
-The local migration, seed, and built Worker scripts all use `.wrangler/state` in the project root. This keeps local D1 data consistent when Wrangler runs with the generated `dist/server/wrangler.json` configuration. The built Worker also reads the required secret from the root `.dev.vars` file
+The development server and the local migration, seed, and built Worker scripts all use `.wrangler/state` in the project root. This keeps local D1 data consistent when Wrangler runs through Vite or with the generated `dist/server/wrangler.json` configuration. The built Worker also reads the required secret from the root `.dev.vars` file
 
 ## Private local seed
 

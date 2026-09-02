@@ -27,6 +27,7 @@
       "binding": "DB",
       "database_name": "cornerstone-hfg",
       "database_id": "987b0b03-cda9-4006-99f7-5a74d39b6f49",
+      "preview_database_id": "00000000-0000-0000-0000-000000000000",
       "migrations_dir": "migrations",
     },
   ],

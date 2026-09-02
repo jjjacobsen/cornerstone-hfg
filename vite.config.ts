@@ -11,6 +11,7 @@ export default defineConfig({
       images: { optimizer: imagesOptimizer() },
     }),
     cloudflare({
+      persistState: { path: ".wrangler/state" },
       viteEnvironment: {
         name: "rsc",
         childEnvironments: ["ssr"],
