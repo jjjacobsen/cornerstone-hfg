@@ -13,9 +13,6 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
             Cornerstone Presbyterian Church
           </p>
           <h1 className="mt-3 text-3xl font-semibold tracking-tight">Home Fellowship Groups</h1>
-          <p className="mt-3 text-sm leading-6 text-[#f6f1e8]/70">
-            Sign in with your group&apos;s shared credentials
-          </p>
         </div>
 
         <section

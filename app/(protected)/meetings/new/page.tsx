@@ -15,10 +15,6 @@ export default async function NewMeetingPage() {
       <h1 className="page-title" id="new-meeting-heading">
         Add meeting
       </h1>
-      <p className="page-description">
-        Plan the schedule, host, location, and meal
-      </p>
-
       <form action="/api/mutations" className="form-card mt-6" method="post">
         <input name="intent" type="hidden" value="create-meeting" />
         <MeetingFields households={households} />

@@ -13,9 +13,6 @@ export default async function HouseholdsPage() {
           <h1 className="page-title" id="households-heading">
             Households
           </h1>
-          <p className="page-description">
-            Manage the households that can host and respond
-          </p>
         </div>
         <a className="button-primary self-start" href="/households/new">
           Add household

@@ -13,10 +13,6 @@ export default async function NewHouseholdPage() {
       <h1 className="page-title" id="new-household-heading">
         Add household
       </h1>
-      <p className="page-description">
-        Create a household that can host and respond to meetings
-      </p>
-
       <form action="/api/mutations" className="form-card mt-6" method="post">
         <input name="intent" type="hidden" value="create-household" />
         <HouseholdFields />

@@ -33,9 +33,6 @@ export default async function DashboardPage() {
         <div>
           <p className="eyebrow">Home fellowship</p>
           <h1 className="page-title">Group calendar</h1>
-          <p className="page-description">
-            Review meeting plans and household responses
-          </p>
         </div>
         <a className="button-primary self-start" href="/meetings/new">
           Add meeting

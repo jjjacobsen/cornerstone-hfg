@@ -30,11 +30,6 @@ export default async function ApplicationLayout({
               </button>
             </form>
           </div>
-          {group.description && (
-            <p className="mt-3 max-w-3xl text-sm leading-6 text-stone-600">
-              {group.description}
-            </p>
-          )}
           <nav
             aria-label="Main navigation"
             className="mt-5 flex flex-wrap gap-2"
